@@ -1,0 +1,101 @@
+:root {
+	/* Gap 12 grid columns*/
+	--gap: 28px;
+
+	/* MaxWidth Of Page, Container-Fluid, Container, Gutter*/
+	--max-width-page: 2560px;
+	--max-width-container-fluid: 1920px;
+	--max-width-container: calc(1196px + (var(--gap) * 2));// 1200px tuỳ thuộc bản thiết kế */
+
+	/* Colors Variable*/
+	--yellow-cl: #BEA67C;
+	--white-cl: #FFfffF;
+	--black-cl: #000000;
+	--grey-cl: #464646;
+	--red-cl: #F14336;
+
+	// Font-size and Line-height for Web
+	--fs-h1: 8.4rem;
+	--lh-h1: normal;
+	--letter-spacing-h1: 10.08px;
+
+	--fs-h2: 4.6rem;
+	--lh-h2: 5.6rem;
+	--letter-spacing-h2: 4.6px;
+
+	--fs-h3: 1.8rem;
+	--lh-h3: 2.4rem;
+	--letter-spacing-h3: 0.72px;
+
+	--fs-text-btn: 1.5rem;
+	--lh-text-btn: normal;
+	--letter-spacing-text-btn: 1.5px;
+
+	--fs-body: 1.8rem;
+	--lh-body: 2.5rem;
+	--letter-spacing-body: 0.36px;
+
+	--fs-body-small: 1.4rem;
+	--lh-body-small: normal;
+	--letter-spacing-body-small: 0.56px;
+
+	// Font-size and Line-height for Mobile	
+	--fs-body-small-mobile: 1.2rem;
+	--lh-body-small-mobile: normal;
+	--letter-spacing-body-small-mobile: 0.48px;
+
+	// General Variable Demo
+	--height-header: 90px;
+	--height-button: 42px;
+	--pd-section: 120px;
+
+	// Timing Transition Variable Demo
+	--duration: 0.4s;
+	--cubic: cubic-bezier(0.59, 0.29, 0.15, 0.93);
+
+	// Responsive
+	@include md {
+		--container-max-width: 1140px;
+	}
+	@include sm {
+		--container-max-width: 960px; // hoặc max-width: 100% tuỳ yêu cầu
+	}
+	@include xs {
+		--container-max-width: 720px; // hoặc max-width: 100% tuỳ yêu cầu
+		--gap: 16px;
+		--pd-section: 60px;
+
+		--fs-h1: 5.6rem;
+		--lh-h1: normal;
+		--letter-spacing-h1: 4.48px;
+	
+		--fs-h2: 3.8rem;
+		--lh-h2: 4.2rem;
+		--letter-spacing-h2: 1.52px;
+	
+		--fs-h3: 1.6rem;
+		--lh-h3: 2.2rem;
+		--letter-spacing-h3: 0.64px;
+	
+		--fs-text-btn: 1.2rem;
+		--lh-text-btn: normal;
+		--letter-spacing-text-btn: 1.2px;
+	
+		--fs-body: 1.5rem;
+		--lh-body: 2rem;
+		--letter-spacing-body: 0.6px;
+	}
+	@include xxs { // < 575.98px tuỳ 
+		--container-max-width: 100%;
+		--fs-body: 1.5rem;
+		--lh-body: 2rem;
+		--letter-spacing-body: 0.6px;
+	}
+
+	@media screen and (max-width: 850px){
+		--fs-h2: 3.8rem;
+		--lh-h2: 4.2rem;
+		--letter-spacing-h2: 1.52px;
+	}
+}
+	

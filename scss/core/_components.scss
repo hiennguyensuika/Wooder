@@ -1,0 +1,37 @@
+/* Component Heading */
+.heading.--h1{
+    font-size: var(--fs-h1);
+    line-height: var(--lh-h1);
+    letter-spacing: var(--letter-spacing-h1);
+    text-transform: uppercase;
+    font-family: pb;
+    color: var(--yellow-cl);
+}
+
+.heading.--h2{
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+    letter-spacing: var(--letter-spacing-h2);
+    text-transform: uppercase;
+    font-family: pb;
+}
+
+.heading.--h3{
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+    letter-spacing: var(--letter-spacing-h3);
+    text-transform: uppercase;
+    font-family: pb;
+} // title of News 
+
+.--btn{
+    font-size: var(--fs-text-btn);
+    line-height: var(--lh-text-btn);
+    letter-spacing: var(--letter-spacing-text-btn);
+    text-transform: uppercase;
+    font-family: pb;
+}// adding class for all the button cta 
+
+.--shorter{
+    display: none;
+}

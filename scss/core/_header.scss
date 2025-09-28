@@ -1,0 +1,215 @@
+header {
+    width: 100%;
+    height: var(--height-header);
+    position: fixed;
+    z-index: 998;
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
+
+    &.--active{
+        background: var(--black-cl)
+    }    
+    .container-fluid {
+        @include display-flex-space-btw;
+    }
+
+    .wooder__logo-img.--mobile{
+        display: none;
+    }
+
+    .header__menu{
+        @include display-flex-space-btw;
+        // @include center;
+
+        li  {
+            position: relative;
+            @include display-flex-center;
+            a{
+                color: var(--white-cl);
+                padding: 15px 18px;
+            
+            &:hover {
+                    color: var(--yellow-cl);
+            }
+
+            &::after{
+                content: '';
+                height: 2px;
+                display: block;
+                width: calc(100% - 40px);
+                background: var(--yellow-cl);
+                // color: var(--yellow-cl);
+                text-align: center;
+                @include center;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.4s;
+                // transition-timing-function: cubic-bezier(.17, .67, .83, .67);
+                bottom: 10px;
+                left: 20px;
+                opacity: 0;
+                visibility: hidden;
+            }
+            &:hover::after{
+                display: block;
+                transform: scaleX(100%);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &.active{
+                    color: var(--yellow-cl);
+                &::after {
+                    transform: scaleX(1);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+            // .home-active{
+            //     color: var(--yellow-cl);
+            //     &::after{
+            //         content: '';
+            //         height: 2px;
+            //         display: block;
+            //         width: calc(100% - 40px);
+            //         background: var(--yellow-cl);
+            //         text-align: center;
+            //         @include center;
+            //         bottom: -5px;
+            //         // left: 20px;
+            //         opacity: 1;
+            //         visibility: visible;
+            //     }
+            // }
+        }
+ 
+        &.cta-language:hover::after {
+            content: '';
+            height: 2px;
+            width: calc(100% - 40px);
+            position: absolute;
+            display: block;
+            margin-top: 2px;
+            left: 20px;
+            background: var(--yellow-cl);
+        }
+    }
+
+    .header__cta {
+        @include display-flex-space-btw;
+        // position: relative;
+        // gap: 19.5px;
+
+        &-signup {
+            padding: 12px 18px;
+            color: var(--white-cl);
+            background: var(--yellow-cl);
+            cursor: pointer;
+            &:hover{
+                background: var(--black-cl);
+                color: var(--yellow-cl);
+            }
+        }
+        &-language {
+            height: var(--height-header);
+            position: relative;
+            cursor: pointer;
+            color: var(--white-cl);
+            padding: 0 22px;
+            @include display-flex-center;
+            
+            .language{
+                @include display-flex-space-btw;
+                gap: 2.1px;
+                height: 95px;
+            }
+
+            .dropdown {
+                display: none;
+                position: absolute;
+                background-color: var(--black-cl);
+                // box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                // z-index: 1;
+                color: var(--white-cl);
+                font-size: 15px;
+                font-family: pb;
+                // top: 57px;
+                // right: 7.5px; 
+                padding: 10px 18px;
+                // line-height: 23px;
+                text-align: center;
+                top: 90px;
+                left: 0px;
+                }
+        
+            // .dropdown li {
+            //     display: block;
+            //     text-decoration: none;
+            //     cursor: pointer;
+            // }
+        
+            .dropdown li:hover {
+                color: var(--yellow-cl);
+                display: block;
+            }
+        
+            .language:hover+.dropdown,
+                .dropdown:hover {
+                display: block;
+            }// check
+        }
+        &-hamburger {
+            display: none;
+            // height: 20px;
+
+            span{
+                width: 24px;
+                height: 2.5px;
+                display: block;
+                background: var(--white-cl);
+                position: absolute;
+               @include transition(0.4s); 
+            }
+
+            span::before , ::after{
+                @include hamburger;
+            }
+            span::before{
+                top: -7px;
+            }
+            span::after{
+                top: 7px;
+            }
+
+            //Putting class active with js
+            &.--active{
+            span {
+                width: 24px;
+                height: 2.5px;
+                display: block;
+                background: transparent;
+                position: relative;
+                opacity: 1;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @include transition(0.4s);
+                // visibility: hidden;
+                // display: none;
+            }
+
+            span::before, ::after{
+                @include hamburger;
+                @include transition(0.4s);
+            }
+            span::before {
+                transform: translateY(9px) rotate(-45deg);
+            }
+            span::after {
+                transform: translateY(-5px) rotate(45deg);
+            }
+        }
+        }
+    }
+}

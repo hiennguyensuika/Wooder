@@ -1,0 +1,66 @@
+// Nav for Mobile
+.menumobile{
+    @include display-flex-center;
+    background: var(--black-cl);
+    position: fixed;
+    width: 100vw;
+    height: -webkit-fill-available;// auto adjust height follow with screen
+    top: var(--height-header);
+    left: 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--duration);
+    z-index: 999;
+    @include transition(0.4s);
+    // pointer-events: none;
+    /* 
+    _ Pointer-events: none - means that the element will not respond to any pointer events, 
+    such as clicks, hover, or scrolling. Make sure its left untouched
+    _ Pointer-events: auto - for active
+    */
+
+    &.--active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .header__menu{
+        li a {
+            width: 100%;
+            font-size: 1.8rem;
+            color: var(--white-cl);
+            @include display-flex-center;
+            padding: 20px 10px;
+            position: relative;
+            @include transition-hover;
+            transition-timing-function: cubic-bezier(.17, .67, .83, .67);
+        }
+        li a:hover {
+            color: var(--yellow-cl);
+        }
+    
+        li:hover a:after {
+            content: '';
+            height: 2px;
+            width: 60%;
+            display: block;
+            background: var(--yellow-cl);
+            position: absolute;
+            bottom: 12px;
+            text-align: center;
+        }
+
+    .buttonyellow{
+        text-align: center;
+        padding: 14px 17px;
+        color: var(--white-cl);
+        background: var(--yellow-cl);
+        cursor: pointer;
+
+    &:hover{
+        color: var(--yellow-cl);
+        background: var(--white-cl);
+    }
+    }
+    }
+}

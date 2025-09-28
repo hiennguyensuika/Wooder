@@ -1,0 +1,11 @@
+# Node modules folder (npm packages)
+node_modules/
+
+# Sass cache folder
+.sass-cache/
+
+# macOS system files
+.DS_Store
+
+# VSCode workspace settings
+.vscode/

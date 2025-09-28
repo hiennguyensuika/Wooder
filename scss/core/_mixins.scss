@@ -1,0 +1,363 @@
+// MIXINS
+
+@mixin display-flex-space-btw{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin display-flex-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin decor-line{
+	content: '';
+	height: 5px;
+	width: 58px;
+	display: block;
+	background: var(--yellow-cl);
+	position: absolute;
+	top: 24px;
+}
+
+@mixin decor-button {
+	content: '';
+	width: 30px;
+	height: 2px;
+	display: block;
+	background: var(--yellow-cl);
+}
+
+@mixin grid-12-cl{
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	align-items: center;
+}
+
+@mixin buttonmore{
+	display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: var(--black-cl);
+    text-transform: uppercase;
+    margin-top: 25px;
+    position: relative;
+    width: fit-content;
+}
+
+@mixin transition-hover{
+	cursor: pointer;
+	transition: var(--duration);
+	--webkit-transition: var(--duration);
+	--o-transform: var(--duration);
+}
+
+@mixin general-textbox-max-width{
+	max-width: 445px;
+}
+
+@mixin overtext ($lines){
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+}
+
+@mixin center-picture{
+	width: 100%;
+	height: 101%;
+	object-fit: cover;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin middle{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+//Center a div
+@mixin center{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+// Middle Img
+@mixin midimg {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@mixin overtext($lines) {
+	display: -webkit-inline-box;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+@mixin hamburger{
+	content: '';
+	display: block;
+	width: inherit;
+	height: inherit;
+	background: var(--white-cl);
+	position: absolute;
+}
+
+@mixin transition($args) {
+	transition: $args;
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+}
+// @mixin heading-h1-mobile{
+// 	font-size: var(--fs-h1-mobile);
+// 	line-height: var(--lh-h1-mobile);
+// 	letter-spacing: var(--letter-spacing-h1-mobile);
+// 	text-transform: uppercase;
+// 	font-family: pb;
+// 	color: var(--yellow-cl);
+// }
+
+// @mixin heading-h2-mobile{
+// 	font-size: var(--fs-h2-mobile);
+// 	line-height: var(--lh-h2-mobile);
+// 	letter-spacing: var(--letter-spacing-h2-mobile);
+// 	text-transform: uppercase;
+//     font-family: pb;
+// }
+
+// @mixin heading-h3-mobile {
+// 	font-size: var(--fs-h3-mobile);
+// 	line-height: var(--lh-h3-mobile);
+// 	letter-spacing: var(--letter-spacing-h3-mobile);
+// 	text-transform: uppercase;
+//     font-family: pb;
+// }
+
+// @mixin text-btn-mobile{
+// 	font-size: var(--fs-text-btn-mobile);
+// 	line-height: var(--lh-text-btn-mobile);
+// 	letter-spacing: var(--letter-spacing-text-btn-mobile);
+// 	text-transform: uppercase;
+//     font-family: pb;
+// }
+		
+// @mixin text-body-mobile{
+// 	font-size: var(--fs-body-mobile);
+// 	line-height: var(--lh-body-mobile);
+// 	letter-spacing: var(--letter-spacing-body-mobile);
+// 	font-family: pr;
+// }
+
+
+// Laptop lớn, screen <= 1440px (tuỳ yêu cầu thiết kế)
+@mixin lg {
+	@media screen and (max-width: 1440px) {
+		@content;
+	}
+}
+// Laptop nhỏ hoặc tablet lớn, screen < 1200px
+@mixin md {
+	@media screen and (max-width: 1199.98px) {
+		@content;
+	}
+}
+// Tablets vừa, screen <= 992px
+@mixin sm {
+	@media screen and (max-width: 991.98px) {
+		@content;
+	}
+}
+// Tablets nhỏ hoặc Phones quay ngang, screen < 768px
+@mixin xs {
+	@media screen and (max-width: 767.98px) {
+		@content;
+	}
+}
+// Phones lớn, screen < 576px
+@mixin xxs {
+	@media screen and (max-width: 575.98px) {
+		@content;
+	}
+}
+// Phones nhỏ, screen < 376px - tuỳ yêu cầu
+@mixin xxxs {
+	@media screen and (max-width: 375.98px) {
+		@content;
+	}
+}
+
+// Landscape
+@mixin landscape {
+	@media screen and (orientation: landscape) {
+		@content;
+	}
+}
+
+// @media max, min
+@mixin maxW($args) {
+	@media (max-width: $args) {
+		@content;
+	}
+}
+@mixin minW($args) {
+	@media (min-width: $args) {
+		@content;
+	}
+}
+@mixin minH($args) {
+	@media (min-height: $args) {
+		@content;
+	}
+}
+@mixin maxH($args) {
+	@media (max-height: $args) {
+		@content;
+	}
+}
+
+// CSS Animation - Transition
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	animation: #{$str};
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+}
+@mixin animation-delay($str) {
+	animation-delay: #{$str};
+	-webkit-animation-delay: #{$str};
+	-moz-animation-delay: #{$str};
+	-ms-animation-delay: #{$str};
+	-o-animation-delay: #{$str};
+}
+@mixin transform($args) {
+	transform: $args;
+	-webkit-transform: $args;
+	-moz-transform: $args;
+	-ms-transform: $args;
+	-o-transform: $args;
+}
+
+@mixin transform-origin($args) {
+	transform-origin: $args;
+	-webkit-transform-origin: $args;
+	-moz-transform-origin: $args;
+	-ms-transform-origin: $args;
+	-o-transform-origin: $args;
+}
+@mixin transition-delay($args) {
+	transition-delay: $args;
+	-webkit-transition-delay: $args;
+	-moz-transition-delay: $args;
+	-ms-transition-delay: $args;
+	-o-transition-delay: $args;
+}
+
+// CSS Text
+@mixin text($font-family, $font-size, $line-height, $color, $text-transform: none) {
+	font-family: $font-family;
+	font-size: $font-size;
+	line-height: $line-height;
+	color: $color;
+	text-transform: $text-transform;
+}
+
+// Middle Object
+@mixin mid($flex: false) {
+	@if $flex == false {
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+		position: absolute;
+	} @else {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+// Frame Img
+@mixin frameimg($w, $h: $w) {
+	width: $w;
+	aspect-ratio: $w/$h;
+	position: relative;
+	overflow: hidden;
+}
+
+// FullScreen
+@mixin fullscreen($fixed: false) {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	@if $fixed {
+		position: fixed;
+	} @else {
+		position: absolute;
+	}
+}
+
+// Visible
+@mixin visible($param: 1) {
+	@if $param == 1 {
+		opacity: 1;
+		visibility: visible;
+	} @else {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+// Size Div
+@mixin size($w, $h: $w, $circle: false) {
+	width: $w;
+	height: $h;
+	@if $circle {
+		border-radius: 100%;
+	}
+}
+
+// Customize Scroll Bar
+@mixin customscroll($width: 5px, $bgTrack: #ddd, $bgThumb: #121212) {
+	&::-webkit-scrollbar {
+		width: $width;
+	}
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $bgThumb;
+	}
+}

@@ -1,0 +1,54 @@
+footer {
+    // width: 100%;
+    background: var(--black-cl);
+
+    .container {
+        width: 100%;
+        height: 100px;
+        color: var(--white-cl);
+        margin-bottom: 0;
+        flex-direction: row;
+        @include display-flex-space-btw;
+        // position: relative;
+    }
+
+    .copyright{
+        font-size: 14px;
+        opacity: 0.5;
+    }
+
+    .wooder__logo {
+       @include center;
+    } // set logo into middle, otherwise it leans on the right side
+
+    .wooder__logo-img.--mobile{
+        display: none;
+    }
+
+    .backtotop {
+        width: 35px;
+        height: 35px;
+        border: 1px solid var(--white-cl);
+        background: #464646;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: absolute;
+        bottom: 28px;       
+        right: 2%;
+        // right: 60px;
+        // position: fixed;
+        z-index: 100;
+        // background: yellow;
+        
+        &.--active{
+            display: flex;
+            // position: fixed;
+        }
+
+        &:hover{
+            background: var(--yellow-cl);
+        }
+    }
+}
