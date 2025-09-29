@@ -17,19 +17,19 @@ Wooder is a responsive landing page website for a wood-based interior design bra
 •  Deploy: Code can be pushed to GitHub and deployed on platforms like Netlify.
 
 4.	Steps to Run Repo:
-Step 1: Clone the repo
-git clone https://github.com/hiennguyensuika/Wooder.git
+    - Step 1: Clone the repo
+      git clone https://github.com/hiennguyensuika/Wooder.git
 
-Step 2: Navigate into the project folder
-cd wooder
+    - Step 2: Navigate into the project folder
+      cd wooder
 
-Step 3: Install project dependencies
-npm install
+    - Step 3: Install project dependencies
+      npm install
 
-Step 4: Run grunt to build the project
-grunt
+    - Step 4: Run grunt to build the project
+      grunt
 
-Step 5: Use Live Server | Go live | Open "index.html" in your browser (Optional)
+    - Step 5: Use Live Server | Go live | Open "index.html" in your browser (Optional)
 
 5.	The highlights of the Repo:
 • Built with SCSS, making styling modular and maintainable
