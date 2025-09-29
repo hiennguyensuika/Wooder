@@ -18,16 +18,16 @@
 
 4.	Steps to Run Repo:
     - Step 1: Clone the repo
-      git clone https://github.com/hiennguyensuika/Wooder.git
+      - git clone https://github.com/hiennguyensuika/Wooder.git
 
     - Step 2: Navigate into the project folder
-      cd wooder
+      - cd wooder
 
     - Step 3: Install project dependencies
-      npm install
+      - npm install
 
     - Step 4: Run grunt to build the project
-      grunt
+      - grunt
 
     - Step 5: Use Live Server | Go live | Open "index.html" in your browser (Optional)
 
